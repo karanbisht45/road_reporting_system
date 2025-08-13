@@ -1,23 +1,10 @@
-// backend/models/Report.js
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const reportSchema = new mongoose.Schema({
-  location: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  imageUrl: {
-    type: String, // store image path or URL
-    required: true
-  },
-  date: {
-    type: Date,
-    default: Date.now
-  }
+    location: { type: String, required: true },
+    description: { type: String, required: true },
+    photo: { type: String }, // store file path
+    createdAt: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model("Report", reportSchema);
+export default mongoose.model("Report", reportSchema);
