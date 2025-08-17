@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - RoadFix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🚧 RoadFix</h1>
+    <h2>Login</h2>
+    <form id="loginForm" class="form">
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p>New user? <a href="signup.html">Signup here</a></p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = {
+        email: document.getElementById("loginEmail").value,
+        password: document.getElementById("loginPassword").value
+      };
+      try {
+        const res = await fetch("http://localhost:5000/api/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+        const result = await res.json();
+
+        if (res.ok && result.token) {
+          localStorage.setItem("token", result.token);
+          alert("Login successful!");
+          window.location.href = "index.html";
+        } else {
+          alert(result.message || "Login failed.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Network error during login.");
+      }
+    });
+  </script>
+</body>
+</html>

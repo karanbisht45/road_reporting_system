@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoadFix - Report Damaged Roads</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoadFix - Report Damaged Roads</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>🚧 RoadFix</h1>
-        <p>Report damaged roads in your area</p>
-    </header>
+  <header>
+    <h1>🚧 RoadFix</h1>
+    <p>Report damaged roads in your area</p>
+  </header>
 
-    <main>
-        <form id="reportForm">
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" placeholder="Enter location" required>
+  <main class="container">
+    <form id="reportForm" class="form">
+      <input type="text" id="location" placeholder="Location" required>
+      <textarea id="description" placeholder="Description" required></textarea>
+      <input type="file" id="photo" accept="image/*">
+      <button type="submit">Submit Report</button>
+    </form>
 
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" placeholder="Describe the damage" required></textarea>
+   <!--
+    <h2>Reports</h2>
+    <div id="reportsContainer"></div>
+    --> 
+  </main>
 
-            <label for="photo">Upload Photo:</label>
-            <input type="file" id="photo" name="photo" accept="image/*" required>
+  <footer>
+    <p>© 2025 RoadFix. All rights reserved.</p>
+  </footer>
 
-            <button type="submit">Submit Report</button>
-        </form>
-    </main>
-
-    <footer>
-        <p>© 2025 RoadFix. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-</html>
+</html
