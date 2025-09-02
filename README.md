@@ -1,6 +1,3 @@
-# 🛣️ Road Reporting System
----
-
 ## 📌 Overview
 The **Road Reporting System** is a community-driven web application that empowers citizens to report **road issues** such as:
 - 🚧 Potholes  
@@ -40,7 +37,3 @@ cd road_reporting_system
 
 # Install dependencies
 npm install
-
-# Start the server
-npm start
-
