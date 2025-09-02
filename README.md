@@ -40,3 +40,7 @@ cd road_reporting_system
 
 # Install dependencies
 npm install
+
+# Start the server
+npm start
+
